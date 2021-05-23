@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.esiea3a.R
 
-class PokemonAdapter(private var dataSet: List<Pokemon>, var listener: ((Int) -> Unit)? = null) : RecyclerView.Adapter<PokemonAdapter.ViewHolder>() {
+class FruitAdapter(private var dataSet: List<Fruit>, var listener: ((Int) -> Unit)? = null) : RecyclerView.Adapter<FruitAdapter.ViewHolder>() {
 
 
     /**
@@ -22,12 +22,12 @@ class PokemonAdapter(private var dataSet: List<Pokemon>, var listener: ((Int) ->
 
         init {
             // Define click listener for the ViewHolder's View.
-            textView = view.findViewById(R.id.pokemon_name)
-            imageView = view.findViewById(R.id.pokemon_img)
+            textView = view.findViewById(R.id.fruit_name)
+            imageView = view.findViewById(R.id.fruit_img)
         }
     }
 
-    fun updateList(list: List<Pokemon>){
+    fun updateList(list: List<Fruit>){
         dataSet = list
         notifyDataSetChanged()
     }
@@ -36,7 +36,7 @@ class PokemonAdapter(private var dataSet: List<Pokemon>, var listener: ((Int) ->
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.pokemon_item, viewGroup, false)
+            .inflate(R.layout.fruit_item, viewGroup, false)
 
         return ViewHolder(view)
     }
@@ -46,9 +46,9 @@ class PokemonAdapter(private var dataSet: List<Pokemon>, var listener: ((Int) ->
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        val pokemon :Pokemon = dataSet[position]
+        val fruit :Fruit = dataSet[position]
 
-        viewHolder.textView.text = pokemon.name
+        viewHolder.textView.text = fruit.consistency
         viewHolder.itemView.setOnClickListener{
             listener?.invoke(position)
         }

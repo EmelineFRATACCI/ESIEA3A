@@ -3,30 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/PokemonListFragment">
+    app:startDestination="@id/FruitListFragment">
 
     <fragment
-        android:id="@+id/PokemonListFragment"
-        android:name="com.example.esiea3a.presentation.list.PokemonListFragment"
+        android:id="@+id/FruitListFragment"
+        android:name="com.example.esiea3a.presentation.list.FruitListFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_pokemon_list">
+        tools:layout="@layout/fragment_fruit_list">
 
         <action
-            android:id="@+id/navigateToPokemonDetailFragment"
-            app:destination="@id/PokemonDetailFragment" />
+            android:id="@+id/navigateToFruitDetailFragment"
+            app:destination="@id/FruitDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/PokemonDetailFragment"
-        android:name="com.example.esiea3a.presentation.detail.PokemonDetailFragment"
+        android:id="@+id/FruitDetailFragment"
+        android:name="com.example.esiea3a.presentation.detail.FruitDetailFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_pokemon_detail">
+        tools:layout="@layout/fragment_fruit_detail">
         <argument
             android:name="pokemonId"
             app:argType="integer"
             android:defaultValue="-1" />
 
         <action
-            android:id="@+id/navigateToPokemonListFragment"
-            app:destination="@id/PokemonListFragment" />
+            android:id="@+id/navigateToFruitListFragment"
+            app:destination="@id/FruitListFragment" />
     </fragment>
 </navigation>

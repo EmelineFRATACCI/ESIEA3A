@@ -1,7 +1,7 @@
 package com.example.esiea3a.presentation
 
-import com.example.esiea3a.presentation.PokeApplication.Companion.context
-import com.example.esiea3a.presentation.api.PokeApi
+import com.example.esiea3a.presentation.FruitApplication.Companion.context
+import com.example.esiea3a.presentation.api.FruitApi
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -17,12 +17,12 @@ class Singletons {
                 .cache(cache)
                 .build()
 
-        val pokeApi: PokeApi = Retrofit.Builder()
-            .baseUrl("https://pokeapi.co/api/v2/")
+        val FRUIT_API: FruitApi = Retrofit.Builder()
+            .baseUrl("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
-            .create(PokeApi::class.java)
+            .create(FruitApi::class.java)
 
 
     }

@@ -14,28 +14,8 @@ class MainActivity : AppCompatActivity() {      //MainActivity hérite de AppCom
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
 
 
-
-        val dailyNews = News("PSG vs OM : Victoire écrasante !!!")
-
-        val toto = "toto"   //val is final, cannot change value
-        var titi = "titi"
-
-        titi = "tata"
-        //toto = "tutu"
-
-        //types primitifs
-        String
-        Boolean
-        val int : Int = 2
-        val isTrue : Boolean = true
-        val float : Float = 2.3f
-        
 
     }
 

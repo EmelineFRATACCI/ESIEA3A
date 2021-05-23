@@ -3,26 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/FruitListFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.esiea3a.FirstFragment"
+        android:id="@+id/FruitListFragment"
+        android:name="com.example.esiea3a.presentation.list.FruitListFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_fruit_list">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/navigateToFruitDetailFragment"
+            app:destination="@id/FruitDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.esiea3a.SecondFragment"
+        android:id="@+id/FruitDetailFragment"
+        android:name="com.example.esiea3a.presentation.detail.FruitDetailFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_fruit_detail">
+        <argument
+            android:name="pokemonId"
+            app:argType="integer"
+            android:defaultValue="-1" />
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/navigateToFruitListFragment"
+            app:destination="@id/FruitListFragment" />
     </fragment>
 </navigation>
